@@ -11,7 +11,7 @@
 		global $db;
 
 		if(!$r = $db->query($q)){
-			err(2, $db->escape_string($q));
+			err(2, db_esc($q));
 		} else {
 			return $r;
 		}
@@ -21,6 +21,6 @@
 		return db_exec($q)->fetch_assoc();
 	}
 
-	print_r(db_exec_first("SELECT * FROM `users`"));
+	function db_esc($s) { global $db; return $db->escape_string($s); }
 
 ?>

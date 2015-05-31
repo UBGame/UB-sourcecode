@@ -1,5 +1,7 @@
 <?php
 	
+	$global_prefix = 'UB_';
+
 	$debug = true;
 
 	function in_debug_mode() {
@@ -7,17 +9,18 @@
 		return $debug;
 	}
 
-	/*if( $debug ) {
+	if( $debug ) {
 		ini_set( "display_errors", "1" );
 		error_reporting( E_ALL & ~E_NOTICE );
 	} else {
 		error_reporting( 0 );
-	}*/
+	}
 
 	/* REQUIRE MODULES */
 	require_once("modules/utils.php");
 	require_once("modules/db.php");
 	require_once("modules/user.php");
+	require_once("modules/company.php");
 
 	if( $_GET['api_call_action'] ) {
 
@@ -31,13 +34,13 @@
 			
 			} else {
 
-				err(1, 'a');
+				err(1, $_GET['api_call_action']);
 
 			}
 
 		} else {
 
-			err(1);
+			err(1, $_GET['api_call_action']);
 
 		}
 

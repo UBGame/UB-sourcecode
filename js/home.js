@@ -5,7 +5,7 @@ $(function() {
 			u: $('#loginUsername').val(),
 			p: $('#loginPassword').val()
 		}, function() {
-			
+			API.redirect(API.settings.base_url + '/game');
 		});
 
 	});
