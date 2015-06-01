@@ -1,0 +1,39 @@
+.modal {
+    overflow: hidden;
+    right: auto;
+    bottom: auto;
+    -webkit-transition: margin-left 0.15s ease-in-out;
+        	transition: margin-left 0.15s ease-in-out;
+    opacity: 1;
+}
+.modal-dialog {
+    margin: 0;
+}
+
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin: auto;
+}
+
+.text-white {
+	color: #fff;
+}
+
+.text-black-shadow {
+	text-shadow: 0 0 3px #000;
+}
+
+#map {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 53px;
+	bottom: 0px; /* 53px */
+}
+	#map #map-container {
+		width: 100%;
+		height: 100%;
+	}

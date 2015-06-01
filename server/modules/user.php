@@ -96,6 +96,14 @@
 
 	}
 
+	function user_logout() {
+
+		global $global_prefix;
+
+		setcookie($global_prefix . 'utk', '', ( time() - 3600 ) );
+
+	}
+
 	function user_get_info() {
 
 		$fields = 'id, firstname, lastname';
@@ -114,6 +122,37 @@
 		$result['username'] = $username;
 		
 		echo json_encode( $result );
+	}
+
+	function user_get_companies() {
+
+		if(isset($_GET['i'])) {
+
+			$result = db_exec("SELECT id, name, lat, lng FROM companies WHERE id_owner='" . db_esc($_GET['i']) . "'");
+
+			$cp = array();
+
+			while($row = $result->fetch_assoc())
+				$cp[] = $row;
+
+			echo json_encode($cp);
+
+		}else {
+			err(4);
+		}
+
+	}
+
+	function user_set_active_company() {
+
+		if(isset($_GET['i'])) {
+
+			db_exec("UPDATE users SET id_active_company='" . db_esc($_GET['i']) . "' WHERE username='" . __get_utk_stored_username() . "'");
+
+		}else {
+			err(4);
+		}
+
 	}
 
 ?>
