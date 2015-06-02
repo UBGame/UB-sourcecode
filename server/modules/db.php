@@ -21,6 +21,14 @@
 		return db_exec($q)->fetch_assoc();
 	}
 
+	function db_exec_all($q) {
+		$res = db_exec($q);
+		$rows = array();
+		while($row = $res->fetch_assoc())
+			$rows[] = $row;
+		return $rows;
+	};
+
 	function db_esc($s) { global $db; return $db->escape_string($s); }
 
 ?>

@@ -1,5 +1,5 @@
 .modal {
-    overflow: hidden;
+    overflow: visible;
     right: auto;
     bottom: auto;
     -webkit-transition: margin-left 0.15s ease-in-out;
@@ -24,6 +24,10 @@
 
 .text-black-shadow {
 	text-shadow: 0 0 3px #000;
+}
+
+h6 {
+	margin: 0;
 }
 
 #map {

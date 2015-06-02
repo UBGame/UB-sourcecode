@@ -57,6 +57,10 @@
 		return __get_username(__get_user_token(), $bypass);
 	}
 
+	function __get_user_id_form_utk() {
+		return db_exec_first("SELECT id FROM users WHERE username='" . __get_utk_stored_username() . "'")['id'];
+	}
+
 	function __is_logged_in() {
 		if(__get_user_token()) {
 			$user = db_exec_first("SELECT id FROM users WHERE username='" . __get_utk_stored_username(true) . "' AND token='" . __get_utk_stored_token(true) . "'");

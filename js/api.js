@@ -14,15 +14,21 @@ var API = {
 	ACTION_USER_GET_COMPANIES: 'user_get_companies',
 	ACTION_USER_SET_ACTIVE_COMPANY: 'user_set_active_company',
 
-	ACTION_COMPANY_GET_INFO: 'company_get_info'
+	ACTION_COMPANY_GET_INFO: 'company_get_info',
+	ACTION_COMPANY_CREATE: 'company_create',
+	ACTION_COMPANY_GET_IN_BOUNDS: 'company_get_in_bounds'
 
+};
+
+API.getErrorMessage = function(id) {
+	return LANG[ id ];
 };
 
 API.error = function(e) {
 
 	var err = $.parseJSON(e.responseText);
 
-	console.error( "API-ERROR[" + err.n + "]: " + LANG[ err.n ] + ( err.m ? " ( " + err.m + " )": "" ));
+	console.error( "API-ERROR[" + err.n + "]: " + API.getErrorMessage(err.n) + ( err.m ? " ( " + err.m + " )": "" ));
 
 };
 

@@ -872,9 +872,11 @@ fieldset[disabled] .btn-info.active {
   color: #3498db;
   background-color: #fff;
   }
-.btn-danger {
+.btn-danger,
+.input-group-btn .btn.btn-danger{ /* EDIT */
   color: #fff;
   background-color: #e74c3c;
+  border: 0;
   }
 .btn-danger:hover,
 .btn-danger.hover,
