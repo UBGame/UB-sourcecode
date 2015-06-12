@@ -21,6 +21,7 @@
 	require_once("modules/db.php");
 	require_once("modules/user.php");
 	require_once("modules/company.php");
+	require_once("modules/branch.php");
 
 	if( $_GET['api_call_action'] ) {
 

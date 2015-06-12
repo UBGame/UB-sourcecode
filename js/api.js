@@ -16,7 +16,10 @@ var API = {
 
 	ACTION_COMPANY_GET_INFO: 'company_get_info',
 	ACTION_COMPANY_CREATE: 'company_create',
-	ACTION_COMPANY_GET_IN_BOUNDS: 'company_get_in_bounds'
+	ACTION_COMPANY_GET_IN_BOUNDS: 'company_get_in_bounds',
+	ACTION_COMPANY_GET_BRANCHES: 'company_get_branches',
+
+	ACTION_BRANCH_CREATE: 'branch_create'
 
 };
 

@@ -132,14 +132,9 @@
 
 		if(isset($_GET['i'])) {
 
-			$result = db_exec("SELECT id, name, lat, lng FROM companies WHERE id_owner='" . db_esc($_GET['i']) . "'");
+			$res = db_exec_all("SELECT b.id, b.id_company,  b.name AS 'branch_name', b.lat, b.lng, b.type FROM branches b, companies c WHERE c.id_owner='" . db_esc($_GET['i']) . "' AND b.id_company = c.id AND type='1'");
 
-			$cp = array();
-
-			while($row = $result->fetch_assoc())
-				$cp[] = $row;
-
-			echo json_encode($cp);
+			echo json_encode($res);
 
 		}else {
 			err(4);

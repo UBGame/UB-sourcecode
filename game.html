@@ -3,7 +3,7 @@
 	<head>
 		<title>Ultimate Business | Game</title>
 		<link rel="stylesheet" href="css/bootstrap.css">
-		<link rel="stylesheet" href="css/flat-ui.css">
+		<!-- <link rel="stylesheet" href="css/flat-ui.css"> -->
 		<link rel="stylesheet" href="css/game.css">
 	</head>
 	<body>
@@ -18,27 +18,26 @@
 					<span class="icon-bar"></span>
 					</button>
 					<span class="navbar-brand">
-						<a href="#" id="navbar_company_name"></a>
+						<a href="#" id="navbar_company_name">
+							<span class="name"></span>
+							<span class="caret"></span>
+						</a>
 					</span>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
-						<li data-toggle="tooltip" data-placement="bottom" title="Global view">
-							<a href="javascript: void(0)" id="map_controls_globe">
-								<span class="glyphicon glyphicon-globe"></span>
+						<li class="dropdown">
+							<a href="#" id="navbar_create" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+								<span class="glyphicon glyphicon-wrench"></span>
 							</a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#" id="navbar_create_branch">Create branch</a></li>
+								<li><a href="#" id="navbar_create_company">Create company</a></li>
+							</ul>
 						</li>
-						<li data-toggle="tooltip" data-placement="bottom" title="Center HQ">
-							<a href="javascript: void(0)" id="map_controls_hq" class="hidden">
-								<span class="glyphicon glyphicon-home"></span>
-							</a>
-						</li>
-						<li class="divider">
-							<a href="javascript: void(0)">|</a>
-						</li>
-						<li  data-toggle="tooltip" data-placement="bottom" title="Companies">
-							<a href="#" id="navbar_company_switch">
+						<li  data-toggle="tooltip" data-placement="bottom" title="Overview">
+							<a href="#" id="navbar_company_overview">
 								<span class="glyphicon glyphicon-briefcase"></span>
 							</a>
 						</li>
@@ -55,7 +54,7 @@
 								<span class="navbar-unread">1</span>
 							</a>
 						</li> -->
-						<li class="dropdown">
+						<!-- <li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 								<span id="navbar_user_dropbox_name"></span>
 								<span class="caret"></span>
@@ -65,6 +64,11 @@
 								<li class="divider"></li>
 								<li><a href="#" id="nabvar_user_dropbox_logout">Logout</a></li>
 							</ul>
+						</li> -->
+						<li>
+							<a href="javascript: void(0)" id="map_controls_globe">
+								<span>May 2015 , Week 3</span>
+							</a>
 						</li>
 					</ul>
 				</div><!-- /.navbar-collapse -->
@@ -81,27 +85,48 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					</button>
+					<span class="navbar-brand">
+						<span>May 2015 , Week 3</span>
+					</span>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
-						<li data-toggle="tooltip" data-placement="top" title="Close all windows">
-							<a href="#" id="navbar_windows_close_all">
-								<span class="glyphicon glyphicon-remove"></span>
+						<li data-toggle="tooltip" data-placement="top" title="Global view">
+							<a href="javascript: void(0)" id="map_controls_globe">
+								<span class="glyphicon glyphicon-globe"></span>
 							</a>
 						</li>
+						<li data-toggle="tooltip" data-placement="top" title="Center HQ">
+							<a href="javascript: void(0)" id="map_controls_hq" class="hidden">
+								<span class="glyphicon glyphicon-home"></span>
+							</a>
+						</li>
+						<li data-toggle="tooltip" data-placement="top" title="Search">
+							<a href="javascript: void(0)" id="map_controls_search">
+								<span class="glyphicon glyphicon-search"></span>
+							</a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
 						<li data-toggle="tooltip" data-placement="top" title="Show/Hide windows">
 							<a href="#" id="navbar_windows_move_toggle">
 								<span class="glyphicon glyphicon-resize-full"></span>
 							</a>
 						</li>
+						<li data-toggle="tooltip" data-placement="top" title="Close all windows">
+							<a href="#" id="navbar_windows_close_all">
+								<span class="glyphicon glyphicon-remove"></span>
+							</a>
+						</li>
 					</ul>
-					<form class="navbar-form navbar-right" role="search" action="javascript: void(0)">
+					
+					<!-- <form class="navbar-form navbar-right" role="search" action="javascript: void(0)">
 				        <div class="form-group">
-				        	<input type="text" class="form-control" placeholder="Search company">
+				        	<input type="text" id="navbar_search_company_query" class="form-control" placeholder="Search company">
 				        </div>
-				        <button type="submit" class="btn btn-default">Search</button>
-				    </form>
+				        <button type="submit" id="navbar_search_company" class="btn btn-default">Search</button>
+				    </form> -->
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
 		</nav>
